@@ -40,7 +40,7 @@
   
     <p>Welcome to my site about my coding jouney. Along this journey I have learned some new skills that I enjoy using. The reason I began this journey was to be able to spend time with my family and learn skills to create new and fun experiences with my two boys and later my daughter as well. Through out my site you will find some examples of the different skills I have learned and fun things I have made by using them. I would have to say my favorite so far has been learning about CSS and how to use it for customizing my site to look the best.</p>
   <p> Soon on my site I will be creating a blog showing things that I make to demonstrate the skills I learn throughout the remainder of the course.If you are interested in seeing more of the skills I have you can follow the link <a href="https://www.linkedin.com/in/danielgraham91/" target="_blank">here</a> to view my linkedin profile.If you are interested in being updated on the contents of my blog as I continue this exciting journey, Please sign up by filling out the information below.</p>
-  <p align="center"> Contact Me </P>
+  <!--<p align="center"> Contact Me </P>
   <form action="example.html" align="center" method="post">
     <label for="First Name">First Name:</label><br>
     <input type="text" id="First Name" name="First Name"><br>
@@ -51,7 +51,20 @@
     <label for="Phone Number">Phone Number:</label><br>
     <input type="text" id="Phone Number" name="Phone Number"><br>
   </form>
-  <button type="save">Save</button>
+  <button type="save">Save</button>-->
+  <div class="container">
+    <h1>Age Calculator</h1>
+    <form>
+      <label for="birthdate">Enter your birthdate:</label>
+      <small>Use the format shown below</small>
+      <input type="text" id="birthdate" name="birthdate" placeholder="MM/DD/YYYY" required>
+      <div class="button-group">
+        <button type="submit" class="submit">CALCULATE</button>
+        <button type="reset" class="reset">RESET</button>
+      </div>
+    </form>
+    <p id="age"></p>
+  </div>
  <script src="javascript/myjavascript.js"></script> 
 </body>
 
