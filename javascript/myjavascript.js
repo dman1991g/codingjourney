@@ -38,7 +38,11 @@ form.addEventListener('submit', function(e) {
   const ageInMilliseconds = Date.now() - birthdate.getTime();
   const ageDate = new Date(ageInMilliseconds);
   const age = Math.abs(ageDate.getUTCFullYear() - 1970);
-
+ ageOutput.textContent = `You are ${age} years old.`;
+});
+form.addEventListener('reset', function() {
+  ageOutput.textContent = null;
+})
   const body = document.querySelector('body');
 const modeToggle = document.getElementById('mode-toggle');
 const modeStatus = document.querySelector('.mode-status');
