@@ -39,3 +39,19 @@ form.addEventListener('submit', function(e) {
   const ageDate = new Date(ageInMilliseconds);
   const age = Math.abs(ageDate.getUTCFullYear() - 1970);
 
+  const body = document.querySelector('body');
+const modeToggle = document.getElementById('mode-toggle');
+const modeStatus = document.querySelector('.mode-status');
+
+function toggleMode() {
+  body.classList.toggle('dark-mode');
+
+  const modeMessage = body.classList.contains('dark-mode') ?
+    'Dark Mode' 
+    : "Light Mode"
+
+  modeStatus.innerText = "Currently in " + modeMessage;
+}
+modeToggle.addEventListener('click', toggleMode);
+
+
