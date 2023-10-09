@@ -235,3 +235,14 @@ button {
   color: #fff;
   display: none;
 }
+
+ if (!element.checkValidity()
+          && element.nodeName !== 'BUTTON'
+          && element.nodeName !== 'SELECT'  
+          && element.type !== 'checkbox'
+          && element.type !== 'radio'
+    ) {
+      element.style.borderColor = 'red'
+      element.nextElementSibling.style.color = 'red'
+      element.nextElementSibling.style.display = 'block'
+      element.previousElementSibling.style.color = 'red'
