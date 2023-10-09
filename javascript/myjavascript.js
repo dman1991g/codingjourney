@@ -65,10 +65,7 @@ const formElements = [ ...form.elements ]
 
 const allInputsValid = () => {
   const valid = formElements.every((element) => {
-    if (element.nodeName === 'SELECT') {
-      return element.value !== 'Please select an option'
-    } else {
-      return element.checkValidity()
+  
     }
   })
 
@@ -80,29 +77,8 @@ const allInputsValid = () => {
 const handleChange = () => {
   // Use the forEach() function to execute the provided function once for each element in the formElements array
   formElements.forEach((element) => {
-    // If the element is invalid and is not a button, a select dropdown, a checkbox, or a radio button, style it with a red border and red text
-    if (!element.checkValidity()
-          && element.nodeName !== 'BUTTON'
-          && element.nodeName !== 'SELECT'  
-          && element.type !== 'checkbox'
-          && element.type !== 'radio'
-    ) {
-      element.style.borderColor = 'red'
-      element.nextElementSibling.style.color = 'red'
-      element.nextElementSibling.style.display = 'block'
-      element.previousElementSibling.style.color = 'red'
-    }
 
-    if (element.checkValidity()
-          && element.nodeName !== 'BUTTON'
-          && element.nodeName !== 'SELECT'
-          && element.type !== 'checkbox'
-          && element.type !== 'radio'
-    ) {
-      element.style.borderColor = '#CED4DA'
-      element.nextElementSibling.style.color = '#CED4DA'
-      element.nextElementSibling.style.display = 'none'
-      element.previousElementSibling.style.color = '#212529'
+ 
     }
 
     if (!element.checkValidity()
