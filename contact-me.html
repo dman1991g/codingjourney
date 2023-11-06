@@ -23,7 +23,7 @@
 
     <div id="form-submitted-msg">Form successfully submitted!</div>
 
-    <form id="exampleForm" novalidate>
+    <form id="Contact me " novalidate>
       <div class="input-group">
         <label for="Name" class="form-label">Name </label>
         <input type="text" id="Name" name="Name" class="form-control" required>
@@ -54,4 +54,26 @@
 
   <script src="javascript/form.js"></script>
   </body>
+  <script>
+   const form = document.querySelector("#form")
+   const submitButton = document.querySelector("#submit")
+   const scriptURL = 'https://script.google.com/macros/s/AKfycbzJ6Wk6-9-fPuzpBOaLa-ED5UO0b5DqIzgkOuKyl4_sf3-DSUp-BaCiAvTEvFBe4PM/exec'
+
+   form.addEventListener('submit', e => {
+     submitButton.disabled = true
+     e.preventDefault()
+     let requestBody = new FormData(form)
+     fetch(scriptURL, { method: 'POST', body: requestBody})
+       .then(response => {
+          alert('Success!', response)
+          submitButton.disabled = false
+         })
+       .catch(error => {
+       alert('Error!', error.message)
+         submitButton.disabled = false
+
+       }
+       )
+   })
+</script>
 </html>
